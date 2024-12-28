@@ -1,0 +1,12 @@
+/**
+ * @param {number[]} nums
+ * @param {Function} fn
+ * @param {number} init
+ * @return {number}
+ */
+var reduce = function(nums, fn, init) {
+    console.log(nums)
+    console.log(fn)
+    console.log(init)
+    return nums.reduce(fn,init)
+};
