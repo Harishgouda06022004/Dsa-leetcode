@@ -5,10 +5,8 @@ class Solution:
             temp={}
             for char in word:
                 temp[char]=temp.get(char,0)+1
-            for char,freq in temp.items():
-                dict1[char]=max(dict1.get(char,0),freq)
-                print(max(dict1.get(char,0),freq))
-            print(temp)
+            for key,freq in temp.items():
+                dict1[key]=max(dict1.get(key,0),freq)
         print(dict1)
         result=[]
         for word in words1:
