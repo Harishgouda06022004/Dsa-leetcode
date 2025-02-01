@@ -21,13 +21,31 @@ class Solution:
         #     if slow==fast:
         #         return True
         # return False
-        dict1={}
-        temp=head
+        # dict1={}
+        # temp=head
+        # # while temp!=None:
         # while temp!=None:
-        while temp!=None:
-            # dict1[index]=temp.val
-            if temp in dict1:
+        #     # dict1[index]=temp.val
+        #     if temp in dict1:
+        #         return True
+        #     dict1[temp]=1
+        #     temp=temp.next
+        # return False
+        # slow=head
+        # fast=head
+        # temp=head
+        # while temp!=None:
+        #     slow=slow.next
+        #     fast=fast.next.next
+        #     if slow==fast:
+        #         return True
+        #     temp=temp.next
+        # return False
+        slow=head
+        fast=head
+        while fast and fast.next is not None:
+            slow=slow.next
+            fast=fast.next.next
+            if slow==fast:
                 return True
-            dict1[temp]=1
-            temp=temp.next
         return False
