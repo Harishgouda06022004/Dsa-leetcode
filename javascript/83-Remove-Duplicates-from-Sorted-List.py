@@ -35,11 +35,19 @@ class Solution:
         seen=set()
         prev=None
         temp=head
-        while temp!=None:
-            if temp.val in seen:
+        # while temp!=None:
+        #     if temp.val in seen:
+        #         prev.next=temp.next
+        #     else:
+        #         seen.add(temp.val)
+        #         prev=temp
+        #     temp=temp.next
+        # return head
+        for val in stack:
+            if val in seen:
                 prev.next=temp.next
             else:
-                seen.add(temp.val)
+                seen.add(val)
                 prev=temp
             temp=temp.next
         return head
