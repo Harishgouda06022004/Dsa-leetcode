@@ -20,9 +20,15 @@ class Solution:
         # return result
         dict1={}
         result=[]
-        for index,i in enumerate(nums):
-            complement=target-i
+        for index,num in enumerate(nums):
+            complement=target-num
             if complement in dict1:
-                return [index,dict1[complement]]
-            dict1[i]=index
-        return []
+                # result.append((dict1[complement],index))
+                return [dict1[complement],index]
+            else:
+                dict1[num]=index
+                
+        return result
+            
+
+        
