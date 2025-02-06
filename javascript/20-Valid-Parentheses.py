@@ -10,9 +10,9 @@ class Solution:
                 if len(stack)==0:
                     return False
                 top=stack[-1]
-                stack.pop()
+                
                 if i==')' and top==\(\ or i==\}\ and top==\{\ or i==\]\ and top==\[\:
-                    continue
+                    stack.pop()
                 else:
                     return False
         return len(stack)==0
