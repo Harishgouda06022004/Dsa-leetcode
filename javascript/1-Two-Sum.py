@@ -29,6 +29,14 @@ class Solution:
                 dict1[num]=index
                 
         return result
-            
+        # i = 0
+        # while i < len(nums) - 1:
+        #     j = i + 1
+        #     while j < len(nums):
+        #         if nums[i] + nums[j] == target:
+        #             return [i, j]
+        #         else:
+        #             j += 1
+        #     i += 1 
 
         
