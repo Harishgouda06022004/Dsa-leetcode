@@ -15,3 +15,12 @@ class Solution:
         for i in range(0,n):
             answers[i]=prefix[i]*suffix[i]
         return answers
+        # result=[]
+        
+        # for i in range(n):
+        #     product=1
+        #     for j in range(n):
+        #         if i!=j:
+        #             product*=nums[j]
+        #     result.append(product)
+        # return result
