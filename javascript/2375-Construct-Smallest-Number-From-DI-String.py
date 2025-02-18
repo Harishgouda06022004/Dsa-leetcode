@@ -17,10 +17,14 @@ class Solution:
         #         res.append(str(stack.pop()))
            
         # return ''.join(res)
-        for char in pattern:
+        counter=1
+        res=[]
+        stack=[]
+        n=len(pattern)
+        for i in range(n):
             stack.append(counter)
             counter+=1
-            if char=='I':
+            if pattern[i]=='I':
                 while stack:
                     res.append(str(stack.pop()))
         stack.append(counter)
