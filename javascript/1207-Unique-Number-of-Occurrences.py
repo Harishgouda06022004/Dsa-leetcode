@@ -1,8 +1,8 @@
 class Solution(object):
     def uniqueOccurrences(self, arr):
         dict1={}
-        arr=sorted(arr)
-        print(arr)
+        # arr=sorted(arr)
+        # print(arr)
         for num in arr:
             if num in dict1:
                 dict1[num]+=1
