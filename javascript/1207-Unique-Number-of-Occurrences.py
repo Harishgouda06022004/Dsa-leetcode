@@ -9,9 +9,9 @@ class Solution(object):
             else:
                 dict1[num]=1
         print(dict1)
-        seen=set()
+        l=[]
         for key,value in dict1.items():
-            if value in seen:
+            if value in l:
                 return False
-            seen.add(value)
+            l.append(value)
         return True
