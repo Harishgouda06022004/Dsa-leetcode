@@ -1,14 +1,10 @@
-class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+class Solution(object):
+    def groupAnagrams(self, strs):
         dict1={}
-        unique_result=[]
-        for i in strs:
-            s=\\.join(sorted(i))
-            
-            if s not in dict1:
-                dict1[s]=[]
-            dict1[s].append(i)
-            
+        for s in strs:
+            c=''.join(sorted(s))
+            if c not in dict1:
+                dict1[c]=[]
+            dict1[c].append(s)
         result=list(dict1.values())
-
         return result
