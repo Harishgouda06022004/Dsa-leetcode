@@ -4,7 +4,7 @@ class Solution(object):
 
         for letter in s:
             if letter in dict1:
-                dict1[letter]+=1
+                dict1[letter]=dict1.get(letter,0)+1
                 for key,val in dict1.items():
                     if val==2:
                         return key
