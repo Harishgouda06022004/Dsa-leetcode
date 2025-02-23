@@ -16,5 +16,3 @@ class Solution(object):
             else:
                 current_str+=char
         return current_str
-
-        
