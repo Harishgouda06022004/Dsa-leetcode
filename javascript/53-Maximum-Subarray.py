@@ -1,7 +1,7 @@
 class Solution(object):
     def maxSubArray(self, nums):
         curr_sum=0
-        max_sum=float(\-inf\) ////
+        max_sum=float(\-inf\) #kadanes algorithm
         n=len(nums)
         for i in range(n):
             curr_sum+=nums[i]
