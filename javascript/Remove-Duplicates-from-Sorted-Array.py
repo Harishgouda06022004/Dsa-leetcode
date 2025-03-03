@@ -8,3 +8,4 @@ class Solution:
                 nums[index]=num
                 index+=1
         return index
+        
