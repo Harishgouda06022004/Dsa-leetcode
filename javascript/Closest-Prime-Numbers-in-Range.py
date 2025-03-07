@@ -30,33 +30,69 @@ class Solution:
         #         closet.append(l[i+1])
         #         break
         # return closet
-        LIMIT = right + 1
-        is_prime = [True] * LIMIT
-        is_prime[0] = is_prime[1] = False  # 0 and 1 are not prime
+        # LIMIT = right + 1
+        # is_prime = [True] * LIMIT
+        # is_prime[0] = is_prime[1] = False  # 0 and 1 are not prime
         
-        for i in range(2, int(LIMIT ** 0.5) + 1):
-            if is_prime[i]:  # If i is prime, mark multiples as non-prime
-                for j in range(i * i, LIMIT, i):
-                    is_prime[j] = False
+        # for i in range(2, int(LIMIT ** 0.5) + 1):
+        #     if is_prime[i]:  # If i is prime, mark multiples as non-prime
+        #         for j in range(i * i, LIMIT, i):
+        #             is_prime[j] = False
 
-        # Step 2: Extract prime numbers in range [left, right]
-        primes = [num for num in range(left, right + 1) if is_prime[num]]
+        # # Step 2: Extract prime numbers in range [left, right]
+        # primes = [num for num in range(left, right + 1) if is_prime[num]]
 
-        # Edge Case: If less than 2 primes exist, return [-1, -1]
-        if len(primes) < 2:
+        # # Edge Case: If less than 2 primes exist, return [-1, -1]
+        # if len(primes) < 2:
+        #     return [-1, -1]
+
+        # # Step 3: Find the closest prime pair
+        # min_diff = float('inf')
+        # closest_pair = [-1, -1]
+
+        # for i in range(len(primes) - 1):
+        #     diff = primes[i + 1] - primes[i]
+        #     if diff < min_diff:
+        #         min_diff = diff
+        #         closest_pair = [primes[i], primes[i + 1]]
+
+        # return closest_pair
+        l = []
+        
+        # Include 2 if it's in range
+        if left <= 2 <= right:
+            l.append(2)
+            left = 3  # Ensure we start checking from odd numbers only
+        
+        # Ensure left is odd to skip even numbers
+        if left % 2 == 0:
+            left += 1
+        
+        # Prime checking for odd numbers only
+        for i in range(left, right + 1, 2):
+            is_prime = True
+            for j in range(3, int(i ** 0.5) + 1, 2):  # Start from 3, skip even divisors
+                if i % j == 0:
+                    is_prime = False
+                    break
+            if is_prime:
+                l.append(i)
+        
+        # If less than 2 primes exist, return [-1, -1]
+        if len(l) < 2:
             return [-1, -1]
 
-        # Step 3: Find the closest prime pair
+        # Find closest prime pair
         min_diff = float('inf')
-        closest_pair = [-1, -1]
-
-        for i in range(len(primes) - 1):
-            diff = primes[i + 1] - primes[i]
-            if diff < min_diff:
-                min_diff = diff
-                closest_pair = [primes[i], primes[i + 1]]
-
-        return closest_pair
+        closest = []
+        
+        for i in range(len(l) - 1):
+            n = l[i + 1] - l[i]
+            if n < min_diff:
+                min_diff = n
+                closest = [l[i], l[i + 1]]  # Update closest pair
+        
+        return closest
 
 
             
