@@ -14,4 +14,5 @@ class Solution:
                 if not count[f]:
                     count.pop(f)
             res=max(res,total)
+        print(count)
         return res
