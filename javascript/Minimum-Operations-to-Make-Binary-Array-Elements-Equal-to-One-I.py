@@ -9,5 +9,6 @@ class Solution:
                 nums[i+2]^=1
                 operations+=1
         if nums[-1]==0 or nums[-2]==0:
+            print(nums[-1])
             return -1
         return operations
