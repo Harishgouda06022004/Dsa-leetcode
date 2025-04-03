@@ -37,14 +37,15 @@ class Solution:
         maxBefore[0] = nums[0]
         for j in range(1, n):
             maxBefore[j] = max(maxBefore[j - 1], nums[j - 1])
-
+        print(maxBefore)
         maxAfter = [0] * n
         maxAfter[n - 1] = nums[n - 1]
         for j in range(n - 2, -1, -1):
             maxAfter[j] = max(maxAfter[j + 1], nums[j + 1])
-
+        print(maxAfter)
         max_value = 0
         for j in range(1, n - 1):
             max_value = max(max_value, (maxBefore[j] - nums[j]) * maxAfter[j])
+            print(max_value)
 
         return max_value
