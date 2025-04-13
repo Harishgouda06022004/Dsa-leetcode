@@ -8,13 +8,25 @@ class Solution:
         #         nums[index]=num
         #         index+=1
         # return index
-        n=len(nums)
-        i=1
-        j=1
-        for i in range(1,n):
-            if nums[i]!=nums[i-1]:
-                nums[j]=nums[i]
-                j+=1
-        return j
+        # n=len(nums)
+        # j=1
+        # for i in range(1,n):
+        #     print(nums[i])
+        #     if nums[i]!=nums[i-1]:
+        #         print(nums[i],nums[i-1])
+        #         nums[j]=nums[i]
+        #         j+=1
+        # return j
+        seen=set()
+        index=0
+        for num in nums:
+            if num not in seen:
+                seen.add(num)
+                nums[index]=num
+                index+=1
+        return index
+
+
+
 
         
