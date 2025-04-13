@@ -18,17 +18,19 @@ class Solution:
         # # unique_list=[list(x) for x in set(tuple(sublist)) for sublist in result]
         # # return unique_list
         # return result
-        dict1={}
-        result=[]
-        for index,num in enumerate(nums):
-            complement=target-num
-            if complement in dict1:
-                # result.append((dict1[complement],index))
-                return [dict1[complement],index]
-            else:
-                dict1[num]=index
-                
-        return result
+        # dict1={}
+        # result=[]
+        # for index,num in enumerate(nums):
+        #     complement=target-num
+        #     if complement in dict1:
+        #         # result.append((dict1[complement],index))
+        #         print(dict1)
+        #         print(dict1[complement],index)
+        #         return [dict1[complement],index]
+        #     else:
+        #         dict1[num]=index
+                 
+        # return result
         # i = 0
         # while i < len(nums) - 1:
         #     j = i + 1
@@ -50,3 +52,13 @@ class Solution:
         #     else:
         #         right-=1
         # return []
+        dict1={}
+        result=[]
+        for index,num in enumerate(nums):
+            # print(index,num)
+            complement=target-num
+            if complement in dict1:
+                return [dict1[complement],index]
+            else:
+                dict1[num]=index
+        return result
