@@ -15,6 +15,7 @@ class Solution:
                 sb.append(str(count))
                 sb.append(s[i-1])
                 count=1
+        print(sb)
         sb.append(str(count))
         sb.append(s[-1])
         return \\.join(sb)
