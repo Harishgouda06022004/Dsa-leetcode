@@ -3,11 +3,12 @@ class Solution:
         if n==1:
             return \1\
         prev=self.countAndSay(n-1)
-        return self.rle(prev) 
+        return self.rle(prev)
     def rle(self,s:str)->str:
         sb=[]
+        n=len(s)
         count=1
-        for i in range(1,len(s)):
+        for i in range(1,n):
             if s[i]==s[i-1]:
                 count+=1
             else:
@@ -16,4 +17,4 @@ class Solution:
                 count=1
         sb.append(str(count))
         sb.append(s[-1])
-        return ''.join(sb)
+        return \\.join(sb)
