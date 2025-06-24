@@ -15,7 +15,9 @@ class Solution:
         for st,ts in zip(s,goal):
             if st!=ts:
                 diff.append((st,ts))
-        print(diff)
+        # print(diff)
+        # print(diff[0])
+        # print(diff[1][::-1])
         return len(diff) == 2 and diff[0] == diff[1][::-1]
 
 
