@@ -14,9 +14,10 @@ class Solution:
                     consonants+=1
             elif not c.isdigit():
                 return False
-        if vowels>=1 and consonants>=1:
-            return True
-        if consonants>=1:
-            return False
-        if vowels>=1:
-            return False
+        # if vowels>=1 and consonants>=1:
+        #     return True
+        # if consonants>=1:
+        #     return False
+        # if vowels>=1:
+        #     return False
+        return vowels>=1 and consonants>=1
