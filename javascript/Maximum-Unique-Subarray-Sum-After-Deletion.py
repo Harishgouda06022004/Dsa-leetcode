@@ -4,9 +4,14 @@ class Solution:
         counter_nums=Counter(nums)
         print(counter_nums)
         summ=0
+        all_negative=True
         for key,value in counter_nums.items():
             if key>0:
-                summ+=key  
+                summ+=key
+                # all_negative=False 
+            # if all_negative:
+            #     return max(nums)
+
             # if len(nums)==1:
             #     return nums[0] 
             # if len(nums)==2 and key<0:
