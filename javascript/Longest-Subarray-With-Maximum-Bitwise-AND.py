@@ -4,7 +4,7 @@ class Solution:
         longest=0
         current=0
         for num in nums:
-            if num>=max_val:
+            if num==max_val:
                 current+=1
                 longest=max(longest,current)
             else:
