@@ -1,3 +1,3 @@
-# Write your MySQL query statement below
-select name from Customer
-where referee_id!=2 or  referee_id is null
+1# Write your MySQL query statement below
+2select name from Customer
+3where referee_id!=2 or referee_id is null
