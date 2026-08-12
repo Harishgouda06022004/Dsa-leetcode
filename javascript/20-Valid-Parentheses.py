@@ -1,18 +1,15 @@
-class Solution(object):
-    def isValid(self, s):
+class Solution:
+    def isValid(self, s: str) -> bool:
         stack=[]
-        for bracket in s:
-            if bracket=='(' or bracket=='[' or bracket=='{':
-                stack.append(bracket)
-                continue
-            if not stack:
-                return False
-            top=stack[-1]
-            stack.pop()
-            if (bracket==')' and top=='(') or (bracket==']' and top=='[') or (bracket=='}' and top=='{'):
-                continue
+        for i in s:
+            if i=='(' or i=='{' or i=='[':
+                stack.append(i)
             else:
-                return False
-            
+                if len(stack)==0:
+                    return False
+                top=stack[-1]
+                if i==')' and top=='(' or i=='}' and top=='{' or i==']' and top=='[':
+                    stack.pop()
+                else:
+                    return False
         return len(stack)==0
-        
