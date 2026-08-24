@@ -9,5 +9,5 @@ class Solution:
         for char in ransomNote:
             if char not in dict1 or dict1[char]==0:
                 return False
-            dict1[char] -= 1
-        return True 
+            dict1[char]-=1
+        return True
